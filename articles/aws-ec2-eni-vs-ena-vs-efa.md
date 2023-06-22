@@ -1,9 +1,9 @@
 ---
-title: "[勉強ログ]AWSEC2 ENI vs ENA vs EFA"
+title: "[勉強ログ]AWS EC2 ENI vs ENA vs EFA"
 emoji: "👊"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["AWS","EC2"]
-published: false
+published: true
 publication_name: "ap_com"
 ---
 
@@ -16,7 +16,6 @@ publication_name: "ap_com"
 基本的に[Udemyのコース](https://www.udemy.com/share/101XFw3@JbpJaY5drC3-tkjgXdXy9Vx3uxfxvdYIhs_3D_ESMpSyG3MknOEjPlp6qc2nTCtD/)に沿って、気持ち改め資格試験のためだけの勉強ではなく、ちゃんと身につけて業務に活かすための勉強をしようと思います。  
 普段AWS触っている身として聞いたことないわ！とかすぐ忘れそうだな、っていうのを残していければいいと思いますよろしくお願いしますというところでさっそく。
 
----
 
 ## ENIとENAとEFA
 EC2では、Elastic Network Interface (ENI)、Enhanced Network Adapter (ENA)、Elastic Fabric Adapter (EFA) という3つのネットワーク機能が提供されています。
@@ -32,8 +31,9 @@ ENI、ENA、EFAはすべて、EC2インスタンスにアタッチする"機能"
 | ENA | 特定のインスタンスタイプで使える。より高いネットワークパフォーマンスを提供。大量のネットワークトラフィックや大規模な分散コンピューティングタスクに向いてる。 |
 | EFA | 特定のインスタンスタイプで使える。非常に高いネットワークパフォーマンスを提供。高性能コンピューティング（HPC）や機械学習ワークロードに最適。 |
 
+:::message
 とりあえずENI👉ENA👉EFAの順番ですごいって理解。
-
+:::
 
 ### 注意点
 それぞれの注意点まとめました。
@@ -44,7 +44,9 @@ ENI、ENA、EFAはすべて、EC2インスタンスにアタッチする"機能"
 | ENA | 特定のEC2インスタンスタイプでのみ使える。ENAを有効にするためには、インスタンスやAMI（Amazon Machine Image）がENAサポートを有効にしている必要がある。|
 | EFA | 特定のEC2インスタンスタイプでのみ使える。EFAを使用するためには、専用のEFA用のOSイメージが必要で、その上で特定のドライバとライブラリをインストールする必要がある。|
 
+:::message
 ENI👉ENA👉EFAの順番で設定するのがめんどくさいっぽい。
+:::
 
 ### ネットワークパフォーマンスについて
 ネットワークパフォーマンスが高いってなんとなくはわかるけど具体的に何が何でどんな時か調べました。
@@ -57,7 +59,9 @@ ENI👉ENA👉EFAの順番で設定するのがめんどくさいっぽい。
 | ジッター | データの到着時間のばらつき | 低(少) |
 | 損失率 | ネットワークを通過する際に失われたデータの割合 | 低(少) |
 
+:::message
 ネットワークパフォーマンスが高い場合、ネットワークは一度に多くのデータを転送でき、データの到着時間も短く、データの損失も少ないってことですな。
+:::
 
 ## ENIの設定と確認方法
 
@@ -97,9 +101,12 @@ ENAのサポートは、AWS CLIまたはSDKを使用して確認できます。�
 aws ec2 describe-instances --instance-ids instance_id --query "Reservations[].Instances[].EnaSupport"
 ```
 ここで`instance_id`は対象のインスタンスIDに置き換えます。
-自環境でENAサポート有効化されているEC2のインスタンスIDに対して上記コマンド打ったら"true"とだけ出ました。そっけないw
 
-EC2インスタンス起動時の画面でも確認できました！
+:::message
+自環境でENAサポート有効化されているEC2のインスタンスIDに対して上記コマンド打ったら"true"とだけ出ました。そっけないw
+:::
+
+また、EC2インスタンス起動時の画面でも確認できました！
 ![](/images/aws-ec2-eni-vs-ena-vs-efa/ena_true.png)
 
 ## EFAの設定と確認方法

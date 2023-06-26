@@ -3,7 +3,7 @@ title: "[AWS] EC2の状態とOS：遷移、停止保護、終了保護を理解�
 emoji: "💆"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["AWS","EC2"]
-published: false
+published: true
 publication_name: "ap_com"
 ---
 
@@ -18,7 +18,7 @@ AWS EC2インスタンスの状態やその遷移、OSからのシャットダ�
 - EC2の状態遷移メッセージの読み解き方
 - EC2の停止保護と終了保護の設定方法
 
-☝️を具体例とともに詳しく解説します。<br>
+☝️を具体例とともに詳しく(一部簡素)解説します。<br>
 
 ## AWS EC2状態とその遷移
 まずはAWS EC2の状態とその遷移、さらにOSとの関連性について解説します。<br>

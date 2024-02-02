@@ -7,7 +7,8 @@ published: true
 publication_name: "ap_com"
 ---
 
-## 🌟 はじめに：
+## 🌟 はじめに
+
 こんにちは、おぐまです。
 
 前回の記事では、Zennの記事を管理するためのブランチ編について説明しました。
@@ -17,6 +18,7 @@ publication_name: "ap_com"
 ## 👷‍♂️ 事前準備
 
 ### 💻 開発環境
+
 - macOS Sonoma 14.3
 - Visual Studio Code 1.85.2 (Universal)
 - GitHubアカウント
@@ -65,6 +67,7 @@ jobs:
 ```yaml
 name: Markdown Lint
 ```
+
 - このワークフローの名前を指定
 - GitHubのActionsタブでこの名前が表示される
 
@@ -75,6 +78,7 @@ on:
   pull_request:
     branches: [ main, develop ]
 ```
+
 - このワークフローがトリガーされる条件を指定する
 - 今回の例では、`main`または`develop`ブランチへの`push` or それらのブランチに対する`pull_request`があった場合にワークフローが実行されます
 
@@ -83,6 +87,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
 ```
+
 - 実行するジョブを定義します
 - この例では`lint`という名前のジョブがあり、`ubuntu-latest`イメージ上で実行されます
 
@@ -90,6 +95,7 @@ jobs:
 steps:
 - uses: actions/checkout@v2
 ```
+
 - リポジトリのコードをチェックアウトするためのステップ
 - これにより、ワークフローがリポジトリのコードにアクセスできるようになる
 
@@ -99,6 +105,7 @@ steps:
   with:
     node-version: '14'
 ```
+
 - Node.jsをセットアップするステップ
 - `actions/setup-node@v2`アクションを使用して、指定されたバージョン(この例では14)のNode.jsをセットアップする
 
@@ -106,6 +113,7 @@ steps:
 - name: Install Markdownlint CLI
   run: npm install -g markdownlint-cli
 ```
+
 - Markdownlint CLIをインストールするステップ
 - `npm install -g markdownlint-cli`コマンドを実行して、MarkdownのLintツールをインストールします
 
@@ -113,6 +121,7 @@ steps:
 - name: Lint Markdown files
   run: markdownlint '**/*.md' --ignore node_modules
 ```
+
 - MarkdownファイルをLintするステップ
 - `markdownlint '**/*.md' --ignore node_modules`コマンドを実行して、リポジトリ内の全てのMarkdownファイルをLintしますが、`node_modules`ディレクトリは除外します。
 

@@ -8,6 +8,7 @@ publication_name: "ap_com"
 ---
 
 ## 🌟 はじめに
+
 おぐまです。
 
 Visual Studio Code（VSCode）のスニペット機能を活用して、Zennでの記事執筆の心理的および時間的な負担を軽減してみました。
@@ -23,20 +24,24 @@ https://zenn.dev/zenn/articles/markdown-guide#fn-ae40-1
 :::
 
 ## 👷‍♂️ 事前準備
+
 Zennの記事を書くのにスニペットを活用するには、まずVSCodeがインストールされてる必要があります。
 ※他エディターでもスニペット登録できると思いますが今回はVScodeに焦点を当ててるので
 
 また、Markdownファイルの基本的な書き方に慣れているとよりよいです。
 
 ### 💻 開発環境
+
 - macOS Sonoma　14.3
 - Visual Studio Code 1.85.2 (Universal)
 - Markdown知識
 
 ## 📖 ステップ
+
 VSCodeでスニペットを作成しZennの記事執筆にどのように使うかを順に説明します。
 
 ### 👉 スニペットファイルの作成
+
 まず、VSCodeでスニペットファイルを作成 or 既存ファイルを編集する方法を紹介します。
 と言いたいところですが、正直ここは以下の方がわかりやすく紹介してくれているので以下参照😌
 https://zenn.dev/miz_dev/articles/157a7aaad0bdcf
@@ -46,6 +51,7 @@ https://zenn.dev/miz_dev/articles/157a7aaad0bdcf
 上記パートで "**markdown**" を選択して下さい。
 
 ### 👉 スニペットの記述
+
 次に "**markdown.json**" に以下Zenn用のスニペットを貼り付けて保存してください。
 
 ```json

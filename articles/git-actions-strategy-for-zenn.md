@@ -3,7 +3,7 @@ title: "[Tips] Zenn用のGit運用考えてみた(Github Actions編)"
 emoji: "💆"
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["zenn", "github", "githubactions", "ci", "markdown"] # 記事に関連するトピックをここに入力
-published: false
+published: true
 publication_name: "ap_com"
 ---
 

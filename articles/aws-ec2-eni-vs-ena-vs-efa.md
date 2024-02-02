@@ -11,7 +11,7 @@ publication_name: "ap_com"
 
 [AWS Certified SysOps Administrator - Associate(SOA)](https://aws.amazon.com/jp/certification/certified-sysops-admin-associate/)の資格試験に2回落ちて立ち直れない28歳です。
 
-立ち直れないのでZennで記事書きながら勉強して隠密再受験しようと思ってますん😩
+立ち直れないのでZennで記事書きながら勉強して隠密再受験しようと思ってます😩
 
 基本的に[Udemyのコース](https://www.udemy.com/share/101XFw3@JbpJaY5drC3-tkjgXdXy9Vx3uxfxvdYIhs_3D_ESMpSyG3MknOEjPlp6qc2nTCtD/)に沿って、気持ち改め資格試験のためだけの勉強ではなく、ちゃんと身につけて業務に活かすための勉強をしようと思います。  
 普段AWS触っている身として聞いたことないわ！とかすぐ忘れそうだな、っていうのを残していければいいと思いますよろしくお願いしますというところでさっそく。

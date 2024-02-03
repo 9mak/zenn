@@ -32,6 +32,12 @@ jobs:
               echo "$file does not exist."
               continue
             fi
+            # Check if the file contains 'published: false'
+            grep -q 'published: false' "$file"
+            if [ $? -ne 0 ]; then
+              echo "$file does not contain 'published: false', skipping."
+              continue
+            fi
             echo "Processing $file"
             sed -i 's/published: false/published: true/' "$file"
           done < changed_files.txt

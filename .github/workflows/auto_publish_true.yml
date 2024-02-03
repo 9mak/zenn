@@ -34,11 +34,7 @@ jobs:
               continue
             fi
             echo "Processing $file"
-            echo "Before sed:"
-            cat "$file"
-            sed -i 's/^published: false/^published: true/' "$file"
-            echo "After sed:"
-            cat "$file"
+            sed -i 's/published: false/published: true/' "$file"
           done < changed_files.txt
 
       - name: Commit and push if changes are detected

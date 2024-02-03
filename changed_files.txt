@@ -1,1 +1,0 @@
-articles/understanding-github-actions-elements-quickly.md

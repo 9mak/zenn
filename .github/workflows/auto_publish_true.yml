@@ -1,0 +1,54 @@
+name: Auto Publish Specific Article
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  auto-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Get list of changed files
+        id: get-changed-files
+        run: |
+          echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'articles/.*\.md$'
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Update 'published' status for changed articles
+        run: |
+          CHANGED_FILES="${{ env.CHANGED_FILES }}"
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No article files were changed."
+            exit 0
+          fi
+    
+          for file in $CHANGED_FILES; do
+            python -c "import yaml; \
+          with open('$file', 'r') as f: \
+            data = yaml.safe_load(f); \
+          if 'published' in data and not data['published']: \
+            data['published'] = True; \
+          with open('$file', 'w') as f: \
+            yaml.dump(data, f, sort_keys=False)"
+          done
+
+      - name: Commit and push if changes are detected
+        run: |
+          git config --global user.email 'action@github.com'
+          git config --global user.name 'GitHub Action'
+          git add .
+          git commit -m 'Auto-publish articles' || exit 0   # Exit gracefully if no changes
+          git push

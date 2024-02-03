@@ -53,6 +53,6 @@ jobs:
           git add .
           git commit -m 'Auto-publish articles' -m '[skip ci]' || exit 0  # Exit gracefully if no changes
           git push --set-upstream origin HEAD:develop --force
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+        # env:
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

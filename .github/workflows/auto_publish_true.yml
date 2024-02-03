@@ -36,7 +36,7 @@ jobs:
             echo "Processing $file"
             echo "Before sed:"
             cat "$file"
-            sed -i '' 's/^published: false$/published: true/' "$file"
+            sed -i 's/^published: false/^published: true/' "$file"
             echo "After sed:"
             cat "$file"
           done < changed_files.txt

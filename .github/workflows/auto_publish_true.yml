@@ -3,7 +3,7 @@ name: Auto Publish Specific Article
 on:
   push:
     branches:
-      - develop 
+      - main
 
 jobs:
   auto-publish:
@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # リポジトリのすべての履歴をフェッチ
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -21,27 +23,20 @@ jobs:
         run: pip install pyyaml
 
       - name: Get list of changed files
-        id: get-changed-files
         run: |
-          CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'articles/.*\.md$')
-          if [ -z "$CHANGED_FILES" ]; then
-            echo "No article files were changed."
-            exit 0
-          fi
-          echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'articles/.*\.md$' > changed_files.txt
 
       - name: Update 'published' status for changed articles
         run: |
-          for file in $CHANGED_FILES; do
-            if grep -q "published: false" "$file"; then
-              sed -i 's/published: false/published: true/' "$file"
-            fi
-          done
+          while IFS= read -r file; do
+            echo "Processing $file"
+            sed -i '/^published: false$/s/false/true/' "$file"
+          done < changed_files.txt
 
       - name: Commit and push if changes are detected
         run: |
           git config --global user.email 'action@github.com'
           git config --global user.name 'GitHub Action'
           git add .
-          git commit -m 'Auto-publish articles' || exit 0   # Exit gracefully if no changes
+          git commit -m 'Auto-publish articles' -m '[skip ci]' || exit 0 # Exit gracefully if no changes
           git push

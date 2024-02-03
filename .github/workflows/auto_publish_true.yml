@@ -24,7 +24,13 @@ jobs:
 
       - name: Get list of changed files
         run: |
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'articles/.*\.md$' > changed_files.txt
+          if [ "${{ github.event.before }}" == "0000000000000000000000000000000000000000" ]; then
+            # 新しいブランチの最初のプッシュの場合、最新のコミットから変更されたファイルのみを取得
+            git diff --name-only ${{ github.sha }}~1 ${{ github.sha }} | grep 'articles/.*\.md$' > changed_files.txt
+          else
+            # それ以外の場合、直前のコミットとの差分から変更されたファイルを取得
+            git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'articles/.*\.md$' > changed_files.txt
+          fi
 
       - name: Show changed files
         run: cat changed_files.txt

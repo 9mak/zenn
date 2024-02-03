@@ -32,9 +32,6 @@ jobs:
             git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'articles/.*\.md$' > changed_files.txt
           fi
 
-      - name: Show changed files
-        run: cat changed_files.txt
-
       - name: Update 'published' status for changed articles
         run: |
           while IFS= read -r file; do
@@ -48,11 +45,11 @@ jobs:
 
       - name: Commit and push if changes are detected
         run: |
-          git config --global user.email 'action@github.com'
-          git config --global user.name 'GitHub Action'
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add .
           git commit -m 'Auto-publish articles' -m '[skip ci]' || exit 0  # Exit gracefully if no changes
           git push --set-upstream origin HEAD:develop --force
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
 

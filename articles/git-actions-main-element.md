@@ -5,7 +5,7 @@ type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["github", "gitHubactions", "ci", "自動化"] # 記事に関連するトピックをここに入力
 published: false
 publication_name: "ap_com"
-# published_at: 2024-02-05 12:00
+published_at: 2024-02-05 12:00
 ---
 ## 🌟 はじめに
 

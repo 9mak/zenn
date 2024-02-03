@@ -3,7 +3,7 @@ name: Auto Publish Specific Article
 on:
   push:
     branches:
-      - develop
+      # - main
 
 jobs:
   auto-publish:
@@ -46,4 +46,3 @@ jobs:
           git push --set-upstream origin HEAD:develop --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-

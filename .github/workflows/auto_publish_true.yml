@@ -45,8 +45,8 @@ jobs:
 
       - name: Commit and push if changes are detected
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+          git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
           git add .
           git commit -m 'Auto-publish articles' -m '[skip ci]' || exit 0  # Exit gracefully if no changes
           git push --set-upstream origin HEAD:develop --force

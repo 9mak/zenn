@@ -3,7 +3,7 @@ name: Auto Publish Specific Article
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   auto-publish:

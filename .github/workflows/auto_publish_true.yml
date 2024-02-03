@@ -21,11 +21,14 @@ jobs:
         run: pip install pyyaml
 
       - name: Get list of changed files
-        id: get-changed-files
         run: |
-          echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'articles/.*\.md$'
-          echo "EOF" >> $GITHUB_ENV
+          if [ "${{ github.event.before }}" == "0000000000000000000000000000000000000000" ]; then
+            echo "This is the first push to a new branch."
+            echo "CHANGED_FILES=$(git ls-files | grep 'articles/.*\.md$')" >> $GITHUB_ENV
+          else
+            CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'articles/.*\.md$')
+            echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
+          fi
 
       - name: Update 'published' status for changed articles
         run: |

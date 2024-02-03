@@ -11,18 +11,19 @@ publication_name: "ap_com"
 
 [AWS Certified SysOps Administrator - Associate(SOA)](https://aws.amazon.com/jp/certification/certified-sysops-admin-associate/)の資格試験に2回落ちて立ち直れない28歳です。
 
-立ち直れないのでZennで記事書きながら勉強して隠密再受験しようと思ってますん😩
+立ち直れないのでZennで記事書きながら勉強して隠密再受験しようと思ってます😩
 
 基本的に[Udemyのコース](https://www.udemy.com/share/101XFw3@JbpJaY5drC3-tkjgXdXy9Vx3uxfxvdYIhs_3D_ESMpSyG3MknOEjPlp6qc2nTCtD/)に沿って、気持ち改め資格試験のためだけの勉強ではなく、ちゃんと身につけて業務に活かすための勉強をしようと思います。  
 普段AWS触っている身として聞いたことないわ！とかすぐ忘れそうだな、っていうのを残していければいいと思いますよろしくお願いしますというところでさっそく。
 
-
 ## ENIとENAとEFA
+
 EC2では、Elastic Network Interface (ENI)、Enhanced Network Adapter (ENA)、Elastic Fabric Adapter (EFA) という3つのネットワーク機能が提供されています。
 
 ENI、ENA、EFAはすべて、EC2インスタンスにアタッチする"機能"であり、それぞれが独立した"サービス"ではないです。
 
 ### 特徴
+
 それぞれの特徴まとめました。
 
 |  機能 | 特徴 |
@@ -36,6 +37,7 @@ ENI、ENA、EFAはすべて、EC2インスタンスにアタッチする"機能"
 :::
 
 ### 注意点
+
 それぞれの注意点まとめました。
 
 |  機能 | 注意点 |
@@ -49,6 +51,7 @@ ENI👉ENA👉EFAの順番で設定するのがめんどくさいっぽい。
 :::
 
 ### ネットワークパフォーマンスについて
+
 ネットワークパフォーマンスが高いってなんとなくはわかるけど具体的に何が何でどんな時か調べました。
 
 | 項目 | 説明 | パフォーマンスが高い時 |
@@ -65,8 +68,10 @@ ENI👉ENA👉EFAの順番で設定するのがめんどくさいっぽい。
 
 ## ENIの設定と確認方法
 
-### 設定方法：
+### ENI - 設定方法
+
 ※ENIをアタッチするEC2がある前提
+
 1. AWSマネジメントコンソールからEC2ダッシュボードを開きます。
 2. 左側のパネルから「ネットワークとセキュリティ」セクションの「ネットワークインターフェース」を選択します。
 3. 「ネットワークインターフェースの作成」ボタンをクリックします。
@@ -74,7 +79,7 @@ ENI👉ENA👉EFAの順番で設定するのがめんどくさいっぽい。
 5. 「ネットワークインターフェース」ページに戻り、作成したENIを右クリックして「アクション」>「インスタンスに接続」を選択します。
 6. 接続するインスタンスを選択し、「接続」をクリックします。
 
-### 確認方法：
+### ENI - 確認方法
 
 1. AWSマネジメントコンソールからEC2ダッシュボードを開きます。
 2. 左側のパネルから「インスタンス」を選択します。
@@ -83,23 +88,27 @@ ENI👉ENA👉EFAの順番で設定するのがめんどくさいっぽい。
 
 ## ENAの設定と確認方法
 
-### 設定方法：
+### ENA - 設定方法
 
 1. インスタンスがENAをサポートしているかを確認します。これはAWS公式ドキュメンテーションから確認できます。
 2. AWS CLIまたはSDKを使用して、インスタンスまたはAMIがENAをサポートするように設定します。たとえば、以下のAWS CLIコマンドを使用できます。
-```
+
+```sh
 aws ec2 modify-instance-attribute --instance-id instance_id --ena-support
 ```
+
 ここで`instance_id`は対象のインスタンスIDに置き換えます。
 ちなみにEC2インスタンスが"stopped"じゃないとコマンド打ってもエラーになるので停止できないけど確認したいって時は、EC2インスタンスに接続してから以下コマンドを打つと黄色枠のように"ena"と表示されます。
-![](/images/aws-ec2-eni-vs-ena-vs-efa/ena_enable.png)
+![ena_enable](/images/aws-ec2-eni-vs-ena-vs-efa/ena_enable.png)
 
-### 確認方法：
+### ENA - 確認方法
 
 ENAのサポートは、AWS CLIまたはSDKを使用して確認できます。たとえば、以下のAWS CLIコマンドを使用できます。
-```
+
+```sh
 aws ec2 describe-instances --instance-ids instance_id --query "Reservations[].Instances[].EnaSupport"
 ```
+
 ここで`instance_id`は対象のインスタンスIDに置き換えます。
 
 :::message
@@ -107,26 +116,29 @@ aws ec2 describe-instances --instance-ids instance_id --query "Reservations[].In
 :::
 
 また、EC2インスタンス起動時の画面でも確認できました！
-![](/images/aws-ec2-eni-vs-ena-vs-efa/ena_true.png)
+![ena_true](/images/aws-ec2-eni-vs-ena-vs-efa/ena_true.png)
 
 ## EFAの設定と確認方法
 
-### 設定方法：
+### EFA - 設定方法
 
 1. EFAをサポートするインスタンスタイプを使用してインスタンスを作成します。
 2. インスタンスを作成するときに、ネットワークインターフェースの「Elastic Fabric Adapter」オプションを有効にします。
 3. 必要な場合は、EFA用のセキュリティグループを作成します。
 4. インスタンスが起動したら、EFA用の特定のドライバとライブラリをインストールします。
 
-### 確認方法：
+### EFA - 確認方法
 
 EFAの設定は、インスタンスのOSから確認できます。以下のコマンドを実行すると、EFAインターフェースが存在するかどうかを確認できます。
-```
+
+```sh
 ls -l /sys/class/infiniband/
 ```
+
 このコマンドは、EFAインターフェースが存在するときに出力を生成します。
 
 ## まとめ
+
 AWS EC2におけるENI、ENA、EFAの3つのネットワーク機能について詳しく解説しました。
 が、マイナーすぎてENAとかEFAは試験でなそうです😇
 

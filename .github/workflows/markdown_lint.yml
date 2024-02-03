@@ -1,0 +1,22 @@
+name: Markdown Lint
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+    - name: Install Markdownlint CLI
+      run: npm install -g markdownlint-cli
+    - name: Lint Markdown files in 'article' directory
+      run: markdownlint 'articles/**/*.md'
+    

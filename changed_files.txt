@@ -1,1 +1,1 @@
-articles/git-actions-main-element.md
+articles/understanding-github-actions-elements-quickly.md

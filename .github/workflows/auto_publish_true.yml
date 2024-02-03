@@ -22,9 +22,8 @@ jobs:
       - name: Install PyYAML
         run: pip install pyyaml
 
-      - name: Get list of changed files
-        run: |
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'articles/.*\.md$' > changed_files.txt || true
+      - name: Get list of all markdown files in articles
+        run: find articles -type f -name '*.md' > changed_files.txt
 
       - name: Update 'published' status for changed articles
         run: |

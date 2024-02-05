@@ -3,7 +3,7 @@ title: "Dialogflow CXの基本を表でサクッと理解する"
 emoji: "💆"
 type: "tech"
 topics: ["gc24", "ai", "googlecloud", "gcp"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024-02-14 12:00
 ---

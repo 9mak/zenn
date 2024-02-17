@@ -3,7 +3,7 @@ name: Auto Publish Specific Article
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   auto-publish:
@@ -14,27 +14,17 @@ jobs:
         with:
           fetch-depth: 0 # リポジトリのすべての履歴をフェッチ
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: Install PyYAML
-        run: pip install pyyaml
-
-      - name: Get list of all markdown files in articles
-        run: find articles -type f -name '*.md' > changed_files.txt
-
-      - name: Update 'published' status for changed articles
+      - name: Get list of all markdown files in articles and Update 'published' status for changed articles
         run: |
-          while IFS= read -r file; do
+          CHANGED_FILES=$(find articles -type f -name '*.md')
+          for file in $CHANGED_FILES; do
             if [ ! -f "$file" ]; then
               echo "$file does not exist."
               continue
             fi
             echo "Processing $file"
             sed -i 's/published: false/published: true/' "$file"
-          done < changed_files.txt
+          done
 
       - name: Commit and push if changes are detected
         run: |
@@ -42,6 +32,6 @@ jobs:
           git config --global user.email 'action@github.com'
           git add .
           git commit -m 'Auto-publish articles' -m '[skip ci]' || exit 0  # Exit gracefully if no changes
-          git push --set-upstream origin HEAD:main --force
+          git push --set-upstream origin HEAD:develop --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

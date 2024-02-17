@@ -3,7 +3,7 @@ title: "[Tips] VSCode起動速度を改善したい"
 emoji: "⏱️"
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["vscode", "パフォーマンス改善", "開発環境"] # 記事に関連するトピックをここに入力
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024-02-28 12:00
 ---

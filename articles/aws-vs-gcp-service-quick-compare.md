@@ -3,7 +3,7 @@ title: "AWSとGCPの主要サービスを表で簡単に比較した"
 emoji: "💆"
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["aws", "gcp", "gc24", "比較"] # 記事に関連するトピックをここに入力
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024-02-21 12:00
 ---

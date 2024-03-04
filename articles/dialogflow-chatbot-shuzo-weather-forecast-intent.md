@@ -3,7 +3,7 @@ title: "DialogFlow CXで天気予報チャットボットをつくる: Intent編
 emoji: "☔"
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["gc24", "gcp", "dialogflowcx", "chatbot", "ai"] # 記事に関連するトピックをここに入力
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024-03-06 12:00
 ---

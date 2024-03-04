@@ -3,7 +3,7 @@ title: "Chromeのブックマークを整理するGPTsつくってみた"
 emoji: "📚"
 type: "idea" # tech: 技術記事 / idea: アイデア記事
 topics: ["ChatGPT", "ai", "GPTs", "Automation"] # 記事に関連するトピックをここに入力
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024-03-06 12:00
 ---

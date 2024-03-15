@@ -76,7 +76,6 @@ Route53クエリログの例は以下公式のログを引用しています。
 :::
 https://docs.aws.amazon.com/ja_jp/Route53/latest/DeveloperGuide/resolver-query-logs-example-json.html
 
-
 ## 🎉 まとめ
 
 AWS Route53のクエリログの最新の構造を理解し、適切に分析できることでエラー調査がしやすくなります。

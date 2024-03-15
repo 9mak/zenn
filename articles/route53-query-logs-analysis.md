@@ -3,7 +3,7 @@ title: "Route53のクエリログの見方調べてみた"
 emoji: "🖊️"
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["AWS", "Route53", "DNS", "クエリログ", "ログ分析"] # 記事に関連するトピックをここに入力
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024-04-10 12:00
 ---

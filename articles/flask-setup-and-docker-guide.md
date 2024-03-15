@@ -3,7 +3,7 @@ title: "FlaskとDockerのさわりだけやってみた"
 emoji: "🚀"
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["Flask", "Docker", "Web開発", "Python", "コンテナ化"] # 記事に関連するトピックをここに入力
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024−04−03 12:00
 ---

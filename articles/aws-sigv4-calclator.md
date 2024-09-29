@@ -1,5 +1,5 @@
 ---
-title: "AWS SigV4 計算ツールの紹介：API認証の裏側を理解しよう"
+title: "[AWS] SigV4計算のコード書いてみた"
 emoji: "🔐"
 type: "tech"
 topics: ["AWS", "認証", "API", "Python", "セキュリティ"]

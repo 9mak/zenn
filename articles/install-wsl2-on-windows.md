@@ -55,11 +55,13 @@ wsl --install
 
 :::message
 既定では、インストールされる Linux ディストリビューションは Ubuntu です！
+
 1. 利用可能なLinuxディストリビューションを確認するには、以下のコマンドを実行します：
 
 ```powershell
 wsl --list --online
 ```
+
 ![コマンド実行結果](/images/install-wsl2-on-windows/wsl-list.png)
 
 2. 好みのディストリビューションを選択してインストールします。例えば、Debianをインストールする場合：
@@ -67,6 +69,7 @@ wsl --list --online
 ```powershell
 wsl --install -d Debian
 ```
+
 :::
 
 ### 👉 ステップ2: WSL2を既定のバージョンに設定

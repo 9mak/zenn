@@ -3,7 +3,7 @@ title: "[Windows] 新しくPC買ったのでWSL2を導入してみる"
 emoji: "🐧"
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["WSL2", "Windows", "Linux", "開発環境"] # 記事に関連するトピックをここに入力
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024-09-29 13:00
 ---
@@ -93,6 +93,36 @@ wsl --list --verbose
 ![コマンド実行結果](/images/install-wsl2-on-windows/wsl-list-verbose.png)
 
 2. 出力に選択したディストリビューション（例：Ubuntu）が表示され、バージョンが2になっていることを確認しましょう
+
+### 👉 ステップ4: WSLの起動と使用
+
+1. PowerShellで以下のコマンドを実行して、WSLを起動します：
+
+```powershell
+wsl
+```
+
+2. これにより、デフォルトのLinuxディストリビューション（通常はUbuntu）が起動します。
+
+3. 特定のディストリビューションを起動したい場合は、以下のコマンドを使用します：
+
+```powershell
+wsl -d <ディストリビューション名>
+```
+
+例えば、Ubuntuを起動する場合：
+
+```powershell
+wsl -d Ubuntu
+```
+
+4. WSLが起動すると、Linuxのコマンドラインインターフェースが表示されます。ここでLinuxコマンドを実行できます。
+
+5. WSLセッションを終了するには、以下のコマンドを使用するか、単に「exit」と入力します：
+
+```bash
+exit
+```
 
 ### 💡 ヒントとトラブルシューティング
 

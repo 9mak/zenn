@@ -157,7 +157,6 @@ aws ec2 describe-instances --instance-ids i-1234567890abcdef0
 公式ドキュメントはわからないことがわかった後に見るのがお勧めです。
 
 - [EC2インスタンスのライフサイクル](https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html)
-- [インスタンスによって起動されたシャットダウン動作の変更
-](https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/terminating-instances.html#Using_ChangingInstanceInitiatedShutdownBehavior)
+- [インスタンスによって起動されたシャットダウン動作の変更](https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/terminating-instances.html#Using_ChangingInstanceInitiatedShutdownBehavior)
 
 以上！

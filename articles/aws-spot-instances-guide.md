@@ -94,8 +94,7 @@ AWS側が未使用のコンピューティングリソースを有効活用す�
 :::message
 **バッチ処理**
 一定期間データを集め、複数の処理をある程度まとめて一括処理を行う方式のこと。また、一連のタスクをスケジューリングしておき、自動的に連続処理を行う方式。
-出典：[用語集｜バッチ処理
-](https://www.idcf.jp/words/batch-processing.html)
+出典：[用語集｜バッチ処理](https://www.idcf.jp/words/batch-processing.html)
 :::
 
 ## スポットインスタンスの注意点

@@ -137,8 +137,6 @@ exit
 3. 「Virtualization Technology」、「Intel VT-x」、または「AMD-V」という項目を探し、有効（Enabled）に設定します
 4. 変更を保存してBIOS設定を終了し、PCを再起動します
 
-https://support.microsoft.com/ja-jp/windows/windows-10-での-仮想化の有効化-c5e6851a-7713-1e35-f233-b3e8dce87c94
-
 ## 🎉 まとめ
 
 これで、Windows 10/11にWSL2を導入し、選択したLinuxディストリビューションをインストールすることができました。

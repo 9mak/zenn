@@ -3,7 +3,7 @@ title: "Amazon Qについて調べてみた - AWSの新しいAIアシスタン�
 emoji: "🤖"
 type: "tech"
 topics: ["AWS", "AmazonQ", "AI", "クラウド"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024-10-16 12:00
 ---

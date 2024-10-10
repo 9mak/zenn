@@ -3,7 +3,7 @@ title: "RSSについて気になったので調べてみた"
 emoji: "📰"
 type: "tech"
 topics: ["RSS", "情報収集", "ウェブ技術"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024-11-06 12:00
 ---

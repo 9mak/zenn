@@ -3,7 +3,7 @@ title: "[AWS] せこいから無料サービスだけのプロジェクト考え
 emoji: "🆓"
 type: "tech"
 topics: ["AWS", "Cloud", "無料"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024-11-13 12:00
 ---

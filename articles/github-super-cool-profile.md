@@ -3,7 +3,7 @@ title: "GitHubのProfile README自動更新するようにした"
 emoji: "🐻"
 type: "idea"
 topics: ["GitHub", "GitHubActions", "自動化", "プロフィール"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024-11-20 12:00
 ---

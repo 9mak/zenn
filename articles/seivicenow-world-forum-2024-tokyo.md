@@ -3,7 +3,7 @@ title: "ServiceNow World Forum 2024に行ってきた"
 emoji: "🚀"
 type: "tech"
 topics: ["ServiceNow", "DX", "AI", "ITSM", "クラウド"]
-published: false
+published: true
 publication_name: "ap_com"
 ---
 

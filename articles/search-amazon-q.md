@@ -84,8 +84,8 @@ AWSコンソールの右側のアイコンをクリックすることで利用�
 
 現時点では英語のみの対応となっているため、日本語で質問を考えて翻訳ツールで英語化する必要があります。
 
-![AWSコンソールトップにいるAmazon Q](/images/search-amazon-q-business/amazon_q_builder_use.png)
-![日本語はしゃべれないAmazon Q](/images/search-amazon-q-business/amazon_q_builder_use_chat.png)
+![AWSコンソールトップにいるAmazon Q](/images/search-amazon-q/amazon_q_builder_use.png)
+![日本語はしゃべれないAmazon Q](/images/search-amazon-q/amazon_q_builder_use_chat.png)
 
 ### 💻 Amazon Q in IDEs
 

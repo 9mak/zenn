@@ -3,7 +3,7 @@ title: "Google ColabでLangChainを使ってGitHubリポジトリを学習させ
 emoji: "🚀"
 type: "tech"
 topics: ["LangChain", "GitHub", "AI", "Python", "GoogleColab"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024-11-27 12:00
 ---

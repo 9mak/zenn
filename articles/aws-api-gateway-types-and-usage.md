@@ -3,7 +3,7 @@ title: "[AWS] API Gatewayの種類と使い分け - REST API、HTTP API、WebSoc
 emoji: "🌐"
 type: "tech"
 topics: ["aws", "apigateway", "serverless", "rest", "websocket"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024-12-11 12:00
 ---

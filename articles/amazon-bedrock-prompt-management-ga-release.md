@@ -3,7 +3,7 @@ title: "[AWS] Amazon Bedrock Prompt Management が一般提供開始！新機能
 emoji: "🤖"
 type: "tech"
 topics: ["aws", "bedrock", "ai", "llm", "prompt"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024-12-18 12:00
 ---

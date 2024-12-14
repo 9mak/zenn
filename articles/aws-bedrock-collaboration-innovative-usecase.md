@@ -3,7 +3,7 @@ title: "AWS Bedrock Multi-Agent Collaboration機能で実現する新時代のAI
 emoji: "🎯"
 type: "tech"
 topics: ["AWS", "Bedrock", "AI", "MultiAgent", "Collaboration"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2024-12-18 12:00
 ---

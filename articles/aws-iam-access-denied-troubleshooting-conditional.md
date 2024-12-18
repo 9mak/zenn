@@ -5,7 +5,7 @@ type: "tech"
 topics: ["aws", "iam", "security", "vpc", "policy"]
 published: true
 publication_name: "ap_com"
-published_at: 2025-01-08 12:00
+published_at: 2025-01-15 12:00
 ---
 
 ## 🌟 はじめに

@@ -5,7 +5,7 @@ type: "tech"
 topics: ["aws", "iam", "security", "kms", "lambda"]
 published: true
 publication_name: "ap_com"
-published_at: 2024-12-25 12:00
+published_at: 2025-01-01 12:00
 ---
 
 ## 🌟 はじめに

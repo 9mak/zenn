@@ -3,7 +3,7 @@ title: "DeepSeekの全貌：AI業界を揺るがす中国発モデルの特異�
 emoji: "🤖"
 type: "tech"
 topics: ["AI", "言語モデル", "技術革新"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2025-02-12 12:00
 ---

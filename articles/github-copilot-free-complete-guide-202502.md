@@ -3,7 +3,7 @@ title: "完全解説！GitHub Copilot無料版の全機能とGemini 2.0 Flash対
 emoji: "🚀"
 type: "tech"
 topics: ["GitHub", "Copilot", "AI", "Gemini", "開発効率化"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2025-02-19 12:00
 ---

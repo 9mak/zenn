@@ -3,7 +3,7 @@ title: "ちょっと前の自分に教えたいAnsibleのPlaybookの書き方"
 emoji: "🧑‍🚀"
 type: "tech"
 topics: ["Ansible", "Playbook", "自動化"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2025-04-16 12:00
 ---

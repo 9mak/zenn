@@ -3,7 +3,7 @@ title: "個人向けデータストレージ比較：NAS vs AWS S3 Glacier Deep 
 emoji: "💡"
 type: "idea"
 topics: ["アイデア", "S3", "NAS"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: "2025-03-19 12:00"
 ---

@@ -3,7 +3,7 @@ title: "Pythonデコレーター入門：概要から具体例まで"
 emoji: "📖"  
 type: "tech"  
 topics: ["Python", "Decorator", "プログラミング"]  
-published: false  
+published: true  
 publication_name: "ap_com"  
 published_at: 2025-04-02 12:00  
 ---

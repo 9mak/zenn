@@ -3,7 +3,7 @@ title: "AI駆動開発の現状と未来：ウォーターフォールやアジ�
 emoji: "💡"
 type: "idea"
 topics: ["AI", "ソフトウェア開発", "効率化"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: "2025-03-26 12:00"
 ---

@@ -34,7 +34,7 @@ Ansibleの環境構築やPlaybookの実行方法を把握しておくと、内�
 AnsibleはPythonベースのツールですので、以下のようにインストール可能です。
 
 ```bash
-$ pip install ansible
+pip install ansible
 ```
 
 ## 📖 ステップバイステップ

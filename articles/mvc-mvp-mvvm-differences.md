@@ -3,7 +3,7 @@ title: "たとえで学ぶ！MVC・MVP・MVVMの違いを解説"
 emoji: "📖"
 type: "tech" 
 topics: ["MVC", "MVP", "MVVM", "アーキテクチャ", "デザインパターン"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2025-04-30 12:00
 ---

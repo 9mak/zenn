@@ -3,7 +3,7 @@ title: "ServiceNowの全認定資格に関する包括的ガイド"
 emoji: "📗"
 type: "idea" # tech: 技術記事 / idea: アイデア記事
 topics: ["ServiceNow", "資格", "認定", "IT", "キャリア"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2025-05-14 12:00
 ---

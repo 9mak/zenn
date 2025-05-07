@@ -3,7 +3,7 @@ title: "ServiceNowもA2Aに対応するらしいのでちょっと調べた"
 emoji: "🤖"
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["ServiceNow", "A2A", "AIエージェント", "相互運用性", "マルチエージェント"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2025-05-21 12:00
 ---

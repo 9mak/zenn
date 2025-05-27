@@ -3,7 +3,7 @@ title: "ServiceNow CSA資格試験合格レポート"
 emoji: "🎓"
 type: "tech"
 topics: ["ServiceNow", "CSA", "資格試験", "ITSM"]
-published: false
+published: true
 publication_name: "ap_com"
 published_at: 2025-05-28 12:00
 ---

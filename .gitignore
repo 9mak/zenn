@@ -1,1 +1,10 @@
+# macOS
 .DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Claude Code（プライベート・非公開）
+CLAUDE.md
+templates/

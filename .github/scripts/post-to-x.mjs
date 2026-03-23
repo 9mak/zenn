@@ -25,7 +25,10 @@ const topicsMatch = content.match(/^topics:\s*\[(.+?)\]\s*$/m);
 const title = titleMatch?.[1] ?? '';
 const emoji = emojiMatch?.[1] ?? '';
 const published = publishedMatch?.[1] === 'true';
-const publishedAt = publishedAtMatch?.[1] ? new Date(publishedAtMatch[1]) : null;
+// published_at はJST（UTC+9）として解釈する
+const publishedAt = publishedAtMatch?.[1]
+  ? new Date(publishedAtMatch[1].trim() + '+09:00')
+  : null;
 
 // topicsをハッシュタグに変換（例: "servicenow" → #ServiceNow）
 const hashtags = topicsMatch?.[1]
@@ -49,7 +52,7 @@ const isScheduled = publishedAt && publishedAt > new Date();
 let tweetText;
 
 if (isScheduled) {
-  const dateStr = publishedAt.toLocaleDateString('ja-JP', {
+  const dateStr = publishedAt.toLocaleString('ja-JP', {
     timeZone: 'Asia/Tokyo',
     month: 'long',
     day: 'numeric',

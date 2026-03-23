@@ -9,6 +9,10 @@ npm-debug.log*
 CLAUDE.md
 templates/
 
+# Node.js パッケージ管理（ローカルプレビュー用のため不要）
+package.json
+package-lock.json
+
 # ログ
 *.log
 firebase-debug.log

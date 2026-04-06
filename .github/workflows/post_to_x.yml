@@ -20,7 +20,11 @@ jobs:
         id: changed
         run: |
           ADDED=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'articles/*.md')
-          echo "added=$ADDED" >> $GITHUB_OUTPUT
+          {
+            echo "added<<EOF"
+            echo "$ADDED"
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
           echo "Added files: $ADDED"
 
       - name: Post to X
@@ -31,7 +35,8 @@ jobs:
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
         run: |
-          for file in ${{ steps.changed.outputs.added }}; do
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
             echo "Processing: $file"
             node .github/scripts/post-to-x.mjs "$file"
-          done
+          done <<< "${{ steps.changed.outputs.added }}"
